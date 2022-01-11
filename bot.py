@@ -376,7 +376,7 @@ def download_video(message, video):
         link = f"https://playerdevi.herokuapp.com/{vid_id}"
     elif "jwplayer" in link and link.endswith('.m3u8'):
         vid_id = link.removesuffix(".m3u8").split("/")[-1]
-        link = f"https://playerdevi.herokuapp.com/vid_id}"
+        link = f"https://playerdevi.herokuapp.com/{vid_id}"
     elif "jwplayer" in link and link.endswith('.mp4'):
         vid_id = link.removesuffix('.mp4').split('/')[-1].split('-')[0]
         link = f"https://playerdevi.herokuapp.com/{vid_id}"
