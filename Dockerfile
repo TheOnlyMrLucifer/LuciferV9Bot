@@ -1,8 +1,8 @@
-FROM python:3.8-slim-buster
+FROM python:3.9.6-alpine3.14
+
 WORKDIR /app
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
 
 COPY . .
+RUN apk add --no-cache gcc libffi-dev musl-dev ffmpeg aria2 && pip install --no-cache-dir -r requirements.txt
 
-CMD python3 mt_botz.py
+CMD [ "python", "./bot.py" ]
